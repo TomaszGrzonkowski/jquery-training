@@ -4,6 +4,7 @@ $(function () {
     setBackgroundElementOnSection();
     setHoverOnNavInLinksSection();
     setBorderOnLiInMainSection();
+    setMoreClassesOnLiInMainSection();
 });
 
 function setBackgroundElementOnSection() {
@@ -16,4 +17,8 @@ function setHoverOnNavInLinksSection() {
 
 function setBorderOnLiInMainSection() {
     $('.main').find('li').addClass('borderClass');
+}
+
+function setMoreClassesOnLiInMainSection() {
+    $('.main').find('li').addClass('colorText backgroundElement');
 }
