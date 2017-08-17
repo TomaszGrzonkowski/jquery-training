@@ -7,6 +7,7 @@ $(function () {
     setMoreClassesOnLiInMainSection();
     makeMenuLinksRed();
     addCreepyHeaderClass();
+    logMenuElements();
 });
 
 function setBackgroundElementOnSection() {
@@ -44,4 +45,12 @@ function addCreepyHeaderClass() {
     if (h1.next().hasClass('crazy')) {
         console.info('OK');
     }
+}
+
+function logMenuElements() {
+    var menuElems = $('.menu').children();
+
+    console.log(menuElems.first());
+    console.log(menuElems.eq(2));
+    console.log(menuElems.last());
 }
