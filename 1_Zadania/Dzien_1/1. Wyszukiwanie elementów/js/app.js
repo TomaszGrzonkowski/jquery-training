@@ -10,6 +10,7 @@ $(function () {
     logMenuElements();
     logFormInputValues();
     doStuffWithCodersLink();
+    doStuffWithLinksSection();
 });
 
 function setBackgroundElementOnSection() {
@@ -76,4 +77,16 @@ function doStuffWithCodersLink() {
     console.log(codersLinkHref);
 
     codersLink.attr('href', 'www.google.pl');
+}
+
+function doStuffWithLinksSection() {
+    var links = $('.links').find('a');
+    var dataHover = links.first().data('hover');
+
+    console.log(dataHover);
+
+    // nie dziala z funkcja .data(key[, value])
+    links.eq(0).attr('data-hover', 'Backbone');
+    links.eq(1).attr('data-hover', 'JavaScript');
+    links.eq(2).attr('data-hover', 'Angular');
 }
