@@ -53,4 +53,8 @@ function logMenuElements() {
     console.log(menuElems.first());
     console.log(menuElems.eq(2));
     console.log(menuElems.last());
+
+    menuElems.addClass('menuLinks');
+
+    menuElems.eq(2).hide();
 }
