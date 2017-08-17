@@ -3,6 +3,7 @@ $(function () {
 
     setBackgroundElementOnSection();
     setHoverOnNavInLinksSection();
+    setBorderOnLiInMainSection();
 });
 
 function setBackgroundElementOnSection() {
@@ -11,4 +12,8 @@ function setBackgroundElementOnSection() {
 
 function setHoverOnNavInLinksSection() {
     $('.links').find('nav').addClass('hover-effect');
+}
+
+function setBorderOnLiInMainSection() {
+    $('.main').find('li').addClass('borderClass');
 }
