@@ -8,6 +8,7 @@ $(function () {
     makeMenuLinksRed();
     addCreepyHeaderClass();
     logMenuElements();
+    logFormInputValues();
 });
 
 function setBackgroundElementOnSection() {
@@ -57,4 +58,12 @@ function logMenuElements() {
     menuElems.addClass('menuLinks');
 
     menuElems.eq(2).hide();
+}
+
+function logFormInputValues() {
+    var formInputs = $('.form').find('input');
+
+    formInputs.each(function () {
+        console.log($(this).val());
+    });
 }
