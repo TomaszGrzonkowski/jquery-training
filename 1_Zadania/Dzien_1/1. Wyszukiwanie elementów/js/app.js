@@ -6,6 +6,7 @@ $(function () {
     setBorderOnLiInMainSection();
     setMoreClassesOnLiInMainSection();
     makeMenuLinksRed();
+    addCreepyHeaderClass();
 });
 
 function setBackgroundElementOnSection() {
@@ -26,4 +27,21 @@ function setMoreClassesOnLiInMainSection() {
 
 function makeMenuLinksRed() {
     var listItems = $('.menu').find('li').addClass('redLinks').first().addClass('xl-font');
+}
+
+function addCreepyHeaderClass() {
+    var h1 = $('h1');
+
+    h1.addClass('creepyHeader');
+    h1.parent().css({
+        borderWidth: '2px',
+        borderColor: 'blue',
+        borderStyle: 'double'
+    });
+
+    h1.next().addClass('crazy');
+
+    if (h1.next().hasClass('crazy')) {
+        console.info('OK');
+    }
 }
