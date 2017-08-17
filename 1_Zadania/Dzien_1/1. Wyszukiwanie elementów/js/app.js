@@ -5,6 +5,7 @@ $(function () {
     setHoverOnNavInLinksSection();
     setBorderOnLiInMainSection();
     setMoreClassesOnLiInMainSection();
+    makeMenuLinksRed();
 });
 
 function setBackgroundElementOnSection() {
@@ -21,4 +22,8 @@ function setBorderOnLiInMainSection() {
 
 function setMoreClassesOnLiInMainSection() {
     $('.main').find('li').addClass('colorText backgroundElement');
+}
+
+function makeMenuLinksRed() {
+    var listItems = $('.menu').find('li').addClass('redLinks').first().addClass('xl-font');
 }

@@ -55,6 +55,15 @@
     background-color: #2ac56c;
     padding: 80px;
 }
+
+.redLinks a {
+    color: #f00;
+}
+
+.xl-font {
+    font-size: x-large;
+}
+
 .hover-effect a {
 	color: rgba(0,0,0,0.2);
 	font-weight: 700;
