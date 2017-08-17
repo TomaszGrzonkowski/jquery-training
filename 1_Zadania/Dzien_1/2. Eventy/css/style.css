@@ -1,0 +1,38 @@
+body {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+
+
+.hero-buttons {
+}
+
+dd {
+    margin: 0;
+    padding: 1em 0;
+}
+
+dt {
+    cursor: pointer;
+    font-weight: bold;
+    font-size : 1.5em;
+    line-height: 2em;
+    background: #e3e3e3;
+    border-bottom: 1px solid #c5c5c5;
+    border-top: 1px solid white;
+}
+
+dt:first-child { border-top: none; }
+dt:nth-last-child(2) { border-bottom: none; }
+
+.hide { display: none;}
+
+.cart-item {
+  border:1px solid #ccc;
+  padding: 15px;
+  width: 300px;
+  border-radius:5px;
+  margin-bottom: 10px;
+}
