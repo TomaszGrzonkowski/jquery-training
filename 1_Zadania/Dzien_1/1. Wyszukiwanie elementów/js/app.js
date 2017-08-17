@@ -9,6 +9,7 @@ $(function () {
     addCreepyHeaderClass();
     logMenuElements();
     logFormInputValues();
+    doStuffWithCodersLink();
 });
 
 function setBackgroundElementOnSection() {
@@ -66,4 +67,13 @@ function logFormInputValues() {
     formInputs.each(function () {
         console.log($(this).val());
     });
+}
+
+function doStuffWithCodersLink() {
+    var codersLink = $('#codersLink');
+    var codersLinkHref = codersLink.attr('href');
+
+    console.log(codersLinkHref);
+
+    codersLink.attr('href', 'www.google.pl');
 }
