@@ -3,6 +3,7 @@ $(function () {
     $('.hero-buttons').find('button').on('click', showElementData);
 
     initSuperheroDescriptionsToggle();
+    initFoodShopping();
 });
 
 function showElementInfo(event) {
@@ -21,4 +22,19 @@ function initSuperheroDescriptionsToggle() {
 
 function toggleSuperheroDescription() {
     $(this).next().slideToggle();
+}
+
+function initFoodShopping() {
+    var shoppings = $('.shopping');
+    shoppings.find('button').on('click', addFruit);
+}
+
+function addFruit() {
+    var btn = $(this);
+
+    if (btn.hasClass('added')) {
+        btn.removeClass('added').text('Dodaj').parent().css('border', '');
+    } else {
+        btn.addClass('added').text('Dodano').parent().css('border', '1px solid green');
+    }
 }
