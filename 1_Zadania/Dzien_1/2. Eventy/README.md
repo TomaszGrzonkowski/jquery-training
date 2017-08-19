@@ -14,7 +14,7 @@ ucz się używać funkcji.
 ### Najeżdżanie i zjeżdżanie  (~ 7min - 12min)
  Ustaw event na elemencie **dt**, którego zadaniem jest wyświetlanie w konsoli informacji o elemencie, na który najechaliśmy.
 
- ### Pobieranie wartości data  (~ 10min - 15min)
+### Pobieranie wartości data  (~ 10min - 15min)
    Znajdź w pliku **index.html** trzy **buttony** w elemencie o **klasie** ```hero-buttons```. Wykonaj następujące czynności:
  * dla każdego elementu ustaw event ```click```, który po kliknięciu pobierze wartość znajdującą się w atrybucie data-feature i wyświetli ją w konsoli.
 
