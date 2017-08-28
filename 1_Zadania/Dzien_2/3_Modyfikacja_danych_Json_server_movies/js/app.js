@@ -1,6 +1,16 @@
 $(function () {
 
     var moviesList = $('.repertuar');
+    var addMovieForm = $('.add_movie');
+    var submitButton = $('#addMovie');
+
+    /* * * * * * * * * * * * * * * * * * * * */
+
+    updateView();
+
+    submitButton.on('click', submitForm);
+
+    /* * * * * * * * * * * * * * * * * * * * */
 
     function getMovies() {
         var config = {
@@ -20,21 +30,54 @@ $(function () {
         return $('<li>').append(heading, paragraph);
     }
 
-    // Gets movies from json-server
-    getMovies()
-        .done(function (res) {
-            console.log(res);
+    function updateView() {
+        // Gets movies from json-server
+        getMovies()
+            .done(function (res) {
+                console.log(res);
 
-            var temp = $('<div>');
+                var temp = $('<div>');
 
-            res.forEach(function (mov) {
-                temp.append(createMovieItem(mov));
+                res.forEach(function (mov) {
+                    temp.append(createMovieItem(mov));
+                });
+
+                this.empty().append(temp.children());
+            })
+            .fail(function (err) {
+                console.error(err);
             });
+    }
 
-            this.append(temp.children());
-        })
-        .fail(function (err) {
-            console.error(err);
-        });
+    function getFormData() {
+        return {
+            title: addMovieForm.find('.get_title').val(),
+            description: addMovieForm.find('.get_description').val()
+        };
+    }
+
+    function postFormData() {
+        var config = {
+            method: 'POST',
+            url: 'http://localhost:3000/movies',
+            data: getFormData(),
+            dataType: 'json'
+        };
+
+        return $.ajax(config);
+    }
+
+    function submitForm(event) {
+        event.preventDefault();
+
+        postFormData()
+            .done(function (res) {
+                console.log(res);
+                updateView();
+            })
+            .fail(function (err) {
+                console.error(err);
+            });
+    }
 
 });
