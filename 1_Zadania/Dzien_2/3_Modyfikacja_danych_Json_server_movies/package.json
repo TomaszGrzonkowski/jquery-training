@@ -1,0 +1,15 @@
+{
+  "name": "3_Modyfikacja_danych_Json_server_movies",
+  "version": "1.0.0",
+  "description": "<img alt=\"Logo\" src=\"http://coderslab.pl/svg/logo-coderslab.svg\" width=\"400\">",
+  "main": "index.js",
+  "scripts": {
+    "json": "json-server --watch ./db/movies.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.12.0"
+  }
+}
