@@ -7,7 +7,7 @@ $(function () {
     /* * * * * * * * * * * * * * * * * * * * */
 
     updateView();
-
+    moviesList.on('click', '.delete', removeMovieItem);
     submitButton.on('click', submitForm);
 
     /* * * * * * * * * * * * * * * * * * * * */
@@ -26,8 +26,22 @@ $(function () {
     function createMovieItem(movie) {
         var heading = $('<h3>').text(movie.title);
         var paragraph = $('<p>').text(movie.description);
+        var button = $('<button class="delete" type="button">').text('Usuń');
 
-        return $('<li>').append(heading, paragraph);
+        return $('<li>', {id: movie.id}).append(heading, paragraph, button);
+    }
+
+    function removeMovieItem() {
+        var movieId = $(this).parent().attr('id');
+
+        deleteMovie(movieId)
+            .done(function (res) {
+                console.log(res);
+                updateView();
+            })
+            .fail(function (err) {
+                console.error(err);
+            });
     }
 
     function updateView() {
@@ -61,6 +75,16 @@ $(function () {
             method: 'POST',
             url: 'http://localhost:3000/movies',
             data: getFormData(),
+            dataType: 'json'
+        };
+
+        return $.ajax(config);
+    }
+
+    function deleteMovie(id) {
+        var config = {
+            method: 'DELETE',
+            url: 'http://localhost:3000/movies/' + id,
             dataType: 'json'
         };
 
